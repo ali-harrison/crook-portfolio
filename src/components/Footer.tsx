@@ -1,3 +1,12 @@
-export const Footer: React.FC = () => {
-    return <div><h1>footer</h1><p>feet</p></div>;
-  };
+import React from 'react';
+import '../styles/global.css';
+
+const Footer: React.FC = () => {
+  return (
+    <footer className="Footer">
+      <p>&copy; Crook.xyz Offcial Website</p>
+    </footer>
+  );
+}
+
+export default Footer;
