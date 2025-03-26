@@ -9,71 +9,77 @@
 body {
   background-color: #121212;
   color: white;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 60px; /* Add padding to avoid overlap with fixed nav */
-  padding-bottom: 40px; /* Add padding for footer spacing */
   margin: 0;
+  scroll-behavior: smooth; /* Enable smooth scrolling */
 }
 
-/* Page Title Styling */
-h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  color: #ff5e00;
-  text-align: center;
-}
-
-/* Navigation Bar */
-nav {
-  background: #1f1f1f;
-  padding: 10px 0;
-  width: 100%;
+/* Navbar Styles */
+.Navbar {
   position: fixed;
   top: 0;
-  left: 0; /* Ensure it starts from the left edge */
+  width: 100%;
+  background: #1f1f1f;
+  padding: 10px;
+  z-index: 1000;
   display: flex;
   justify-content: center;
-  border-bottom: 2px solid #00ff00; /* Wireframe for the navbar (green) */
-  z-index: 1000; /* Ensure it stays on top of other elements */
+  border-bottom: 2px solid #00ff00;
 }
 
-nav ul {
+.Navbar ul {
   list-style: none;
   display: flex;
   gap: 15px;
-  padding: 0;
-  margin: 0;
 }
 
-nav a {
+.Navbar a {
   color: white;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
 
-nav a:hover {
+.Navbar a:hover {
   color: #ff5e00;
 }
 
-/* Main Content Container */
-main {
-  width: 100%;
-  max-width: 1200px;
-  padding: 20px;
-  border: 2px solid #ff5e00; /* Wireframe for the main content (orange) */
-  margin: 80px 0; /* Add margin for spacing from fixed nav and footer */
-  flex-grow: 1;
+/* Section Styles */
+.Section {
+  min-height: 100vh;
+  padding: 80px 20px 20px; /* Account for fixed navbar */
+  margin-top: 60px; /* Space between sections */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Simple Footer */
-footer {
-  width: 100%;
-  padding: 20px;
-  background: #1f1f1f;
-  border-top: 2px solid #0000ff; /* Wireframe for the footer (blue) */
+.Section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.Section h2 {
+  color: #ff5e00;
+  margin-bottom: 20px;
   text-align: center;
+}
+
+.Section p {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Footer Styles */
+.Footer {
+  background: #1f1f1f;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #0000ff;
+  position: relative;
+}
+
+.Footer p {
+  margin: 0;
 }

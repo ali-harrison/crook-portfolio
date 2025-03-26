@@ -3,10 +3,10 @@ import '../styles/global.css';
 
 const About: React.FC = () => {
   return (
-    <main className="About">
+    <section id="about" className="Section">
       <h2>About Us</h2>
-      <p>This is the about page content.</p>
-    </main>
+      <p>This is the about page content. It should provide enough content to demonstrate scrolling.</p>
+    </section>
   );
 }
 
