@@ -7,10 +7,26 @@
 }
 
 body {
-  background-color: #121212;
+  background: linear-gradient(270deg, #ff5e00, #00ff00, #0000ff);
+  background-size: 600% 600%;
+  animation: GradientBackground 15s ease infinite;
   color: white;
   margin: 0;
   scroll-behavior: smooth; /* Enable smooth scrolling */
+  line-height: 1.5;
+}
+
+/* Animation for Gradient Background */
+@keyframes GradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Navbar Styles */
@@ -43,11 +59,14 @@ body {
   color: #ff5e00;
 }
 
-/* Section Styles */
+/* Container Styles for Card Effect */
 .Section {
-  min-height: 100vh;
-  padding: 80px 20px 20px; /* Account for fixed navbar */
-  margin-top: 60px; /* Space between sections */
+  max-width: 800px; /* Adjust as needed for your design */
+  margin: 60px auto; /* Center the card horizontally with top and bottom margin */
+  padding: 40px;
+  background-color: rgba(31, 31, 31, 0.9); /* Slight transparency to let the background show through */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -69,6 +88,47 @@ body {
   margin: 0 auto;
   text-align: center;
   line-height: 1.6;
+  color: white;
+}
+
+/* Home Section Styles */
+.HomeSection {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212;
+  color: white;
+  overflow: hidden;
+  border: 1px dashed #ccc; /* For wireframe border */
+}
+
+.HomeContent {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 1s forwards;
+}
+
+.HomeImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 1px dashed #ccc; /* For wireframe border */
+}
+
+.HomeTitle {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+/* Keyframes for Animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Footer Styles */
@@ -78,6 +138,7 @@ body {
   padding: 20px;
   border-top: 2px solid #0000ff;
   position: relative;
+  border-top: 1px dashed #f70404; /* For wireframe border */
 }
 
 .Footer p {

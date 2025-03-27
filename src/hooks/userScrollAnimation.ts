@@ -15,7 +15,7 @@ export const useScrollAnimation = () => {
         });
       },
       {
-        threshold: 0.1,
+        threshold: 0.5, // Adjust this value as needed
       }
     );
 
